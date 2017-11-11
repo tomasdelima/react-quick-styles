@@ -1,29 +1,29 @@
-var join = (a) => {var b = ""; for (var i=0; i < a.length; i++) {b += a[i] + "px "}; return b}
+var join = function (a) {var b = ""; for (var i=0; i < a.length; i++) {b += a[i] + "px "}; return b}
 
-var m = window.innerWidth <= 600 || [/Android/i, /webOS/i, /iPhone/i, /iPad/i , /iPod/i, /BlackBerry/i, /Windows Phone/i].reduce((m, v) => m || !!navigator.userAgent.match(v), false)
+var m = window.innerWidth <= 600 || [/Android/i, /webOS/i, /iPhone/i, /iPad/i , /iPod/i, /BlackBerry/i, /Windows Phone/i].reducefunction ((m, v) {m || !!navigator.userAgent.match(v), false)
 
 var c = {
   blue:      "#3399CC",
   darkBlue:  "#1A2438",
   gray:      "#333",
-  grey:      (x) => {x = Math.round(x*2.55); return "rgb("+x+","+x+","+x+")"},
+  grey:      function (x) {x = Math.round(x*2.55); return "rgb("+x+","+x+","+x+")"},
   lightGray: "#666",
   transparent: "transparent",
 }
 
-var rgba = (r, g, b, a) => "rgba("+r+","+g+","+b+","+a+")"
+var rgba = function (r, g, b, a) {"rgba("+r+","+g+","+b+","+a+")"
 
 var t = {
-  red:   (alpha) => rgba(255, 0, 0, alpha),
-  green: (alpha) => rgba(0, 255, 0, alpha),
-  blue:  (alpha) => rgba(0, 0, 255, alpha),
-  yellow: (alpha) => rgba(245, 166, 0, alpha),
-  purple: (alpha) => rgba(126, 0, 126, alpha),
-  water:  (alpha) => rgba(0, 126, 126, alpha),
-  darkWater: (alpha) => rgba(0, 40, 40, alpha),
+  red:   function (alpha) {rgba(255, 0, 0, alpha),
+  green: function (alpha) {rgba(0, 255, 0, alpha),
+  blue:  function (alpha) {rgba(0, 0, 255, alpha),
+  yellow: function (alpha) {rgba(245, 166, 0, alpha),
+  purple: function (alpha) {rgba(126, 0, 126, alpha),
+  water:  function (alpha) {rgba(0, 126, 126, alpha),
+  darkWater: function (alpha) {rgba(0, 40, 40, alpha),
 
-  gray: (alpha) => rgba(126, 126, 126, alpha),
-  dark: (alpha) => rgba(16, 16, 16, alpha),
+  gray: function (alpha) {rgba(126, 126, 126, alpha),
+  dark: function (alpha) {rgba(16, 16, 16, alpha),
 }
 
 var BG = function (x) {return {background: x}}
@@ -49,8 +49,8 @@ export default {
   start2:     {alignItems: "flex-start"},
   end1:       {justifyContent: "flex-end"},
   end2:       {alignItems: "flex-end"},
-  shrink:     (x) => {return {flexShrink: x}},
-  grow:       (x) => {return {flexGrow: x}},
+  shrink:     function (x) {return {flexShrink: x}},
+  grow:       function (x) {return {flexGrow: x}},
   scroll:     {overflow: "auto"},
   noWrap:     {whiteSpace: "nowrap"},
   wrapWord:   {wordWrap: "break-word"},
@@ -119,11 +119,11 @@ export default {
   m, c, t,
 }
 
-Object.merge = (obj1, obj2) => {obj1 = obj1 || {}; obj2 = obj2 || {};var obj3 = JSON.parse(JSON.stringify(obj1)); Object.keys(obj2).map((key) => obj3[key] = obj2[key]); return obj3}
+Object.merge = function (obj1, obj2) => {obj1 = obj1 || {}; obj2 = obj2 || {};var obj3 = JSON.parse(JSON.stringify(obj1)); Object.keys(obj2).map((key) {obj3[key] = obj2[key]); return obj3}
 Array.prototype.merge = function () { var obj = {}; this.map(i => obj = Object.merge(obj, i)); return obj }
-Object.map = function (obj, func) { Object.keys(obj).map((k, i) => obj[k] = func(k, obj[k], i)); return obj }
-Object.each = function (obj, func) { var arr = []; Object.keys(obj).map((k, i) => arr.push(func(k, obj[k], i))); return arr }
-Object.reduce = function (obj, initial, func) { Object.keys(obj).map((k, i) => initial = func(initial, k, obj[k], i)); return initial }
-Array.prototype.compact = function () { return this.filter((a) => a) }
-Array.prototype.unique =  function () { return this.filter((a, i) => this.indexOf(a) === i) }
-Array.prototype.flatten = function () { return this.map((a) => (a.constructor.name == 'Array' && a.length == 1) ? a[0] : a) }
+Object.map = function function (obj, func) { Object.keys(obj).map((k, i) {obj[k] = func(k, obj[k], i)); return obj }
+Object.each = function function (obj, func) { var arr = []; Object.keys(obj).map((k, i) {arr.push(func(k, obj[k], i))); return arr }
+Object.reduce = function function (obj, initial, func) { Object.keys(obj).map((k, i) {initial = func(initial, k, obj[k], i)); return initial }
+Array.prototype.compact = function function () { return this.filter((a) {a) }
+Array.prototype.unique =  function function () { return this.filter((a, i) {this.indexOf(a) === i) }
+Array.prototype.flatten = function function () { return this.map((a) {(a.constructor.name == 'Array' && a.length == 1) ? a[0] : a) }
