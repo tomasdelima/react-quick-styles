@@ -124,6 +124,6 @@ Array.prototype.merge = function () { var obj = {}; this.map(function(i) {obj = 
 Object.map = function (obj, func) { Object.keys(obj).map(function (k, i) {obj[k] = func(k, obj[k], i)}); return obj }
 Object.each = function (obj, func) { var arr = []; Object.keys(obj).map(function (k, i) {arr.push(func(k, obj[k], i))}); return arr }
 Object.reduce = function (obj, initial, func) { Object.keys(obj).map(function (k, i) {initial = func(initial, k, obj[k], i)}); return initial }
-Array.prototype.compact = function () { return this.filter(function(a) {a}) }
-Array.prototype.unique =  function () { return this.filter(function (a, i) {this.indexOf(a) === i}) }
+Array.prototype.compact = function () { return this.filter(function(a) {return a}) }
+Array.prototype.unique =  function () { return this.filter(function (a, i) {return this.indexOf(a) === i}) }
 Array.prototype.flatten = function () { return this.map(function (a) {return (a.constructor.name == 'Array' && a.length == 1) ? a[0] : a}) }
